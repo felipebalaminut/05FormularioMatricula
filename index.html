@@ -29,9 +29,55 @@
             educação infantil Estrelas do Amanhã.
           </p>
 
-          <form>
+          <form method="post" enctype="multipart/form-data">
             <fieldset class="child-info">
               <legend>Informações da criança</legend>
+
+              <div class="input-wrapper">
+                <label for="fullname">Nome completo</label>
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  placeholder="Nome da criança"
+                />
+              </div>
+
+              <div class="input-wrapper">
+                <label for="birth">Data de nascimento</label>
+                <input type="date" id="birth" name="birth" lang="pt-BR" />
+              </div>
+
+              <div class="select-wrapper">
+                <label for="gender">Sexo</label>
+                <select id="gender" name="gender">
+                  <option name="na" value="na" disabled selected>
+                    Prefiro não dizer
+                  </option>
+                  <option name="male" value="male">Masculino</option>
+                  <option name="female" value="female">Feminino</option>
+                </select>
+              </div>
+
+              <div class="textarea-wrapper">
+                <label for="medical-info">Informações médicas</label>
+                <textarea
+                  name="medical-info"
+                  id="medical-info"
+                  cols="30"
+                  rows="5"
+                  placeholder="A criança possui alguma condição médica que a escola deve estar ciente?"
+                ></textarea>
+              </div>
+
+              <div class="droparea-wrapper">
+                <label for="birth file">Certidão de nascimento</label>
+                <input type="file" id="birth-file" name="birth-file" />
+                <img
+                  src="assets/icons/cloud-upload.svg"
+                  alt="ícone de upload"
+                />
+              </div>
             </fieldset>
           </form>
         </div>
