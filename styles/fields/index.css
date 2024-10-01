@@ -1,3 +1,5 @@
+@import url(droparea.css);
+
 /* PADRÕES DE CAMPOS */
 
 input,
@@ -24,11 +26,12 @@ label {
 
 input:focus,
 select:focus,
-textarea:focus {
-  outline: .25rem solid var(--surface-secondary);
-  border: .125rem solid var(--stroke-highlight);
-  
-  outline-offset: .1px; /* para aparecer outline no safari */
+textarea:focus,
+input[type="date"]:focus-within {
+  outline: 0.25rem solid var(--surface-secondary);
+  border: 0.125rem solid var(--stroke-highlight);
+
+  outline-offset: 0.1px; /* para aparecer outline no safari */
 }
 
 input[type="date"] {
@@ -41,7 +44,7 @@ input[type="date"] {
     background: url(../../assets/icons/calendar-03.svg) center/contain;
     right: 1rem; 
   }
-  */ 
+  */
 
   &::-webkit-calendar-picker-indicator {
     opacity: 0;
@@ -62,5 +65,50 @@ input[type="date"] {
 }
 
 select {
-  background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+  background: url(../../assets/icons/arrow-down-01.svg) no-repeat
+    calc(100% - 1rem);
+}
+
+.adress .flex {
+  gap: 1.25rem;
+}
+
+.input-wrapper:has([disabled]) {
+  opacity: 0.5;
+}
+
+input {
+  &[disabled] {
+    background-color: var(--surface-disabled);
+
+    border: 1px solid var(--stroke-default);
+    color: var(--text-primary);
+  }
+
+  &:invalid {
+    border: 0.125rem solid var(--semantic-error);
+  }
+
+  & + small { /* input que tenha small como irmão */
+    font: (--text-sm);
+    color: #78716C;
+
+    display: inline-block;
+    margin-bottom: .25rem;
+  }
+
+  &[required] + .error {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    font: var(--text-sm);
+    color: var(--semantic-error);
+
+    margin-top: .25rem;
+  }
+
+  &:not(:focus):valid + .error {
+    display: none;
+  }
 }
