@@ -3,16 +3,17 @@ button {
   font-weight: 500;
 
   color: var(--text-highlight);
-  padding: .75rem 1.5rem;
-  border-radius: .5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
 
   &.btn-primary {
     color: white;
-    background-color: #E43A12;
+    background-color: #e43a12;
 
-    &:hover, &:focus {
-      background-color: #F3541C;
+    &:hover,
+    &:focus {
+      background-color: #f3541c;
     }
   }
 
@@ -20,10 +21,19 @@ button {
     margin-left: auto;
     border: 1px solid var(--text-highlight);
 
-    &:hover, &:focus {
-      outline: .25rem solid var(--surface-secondary);
+    &:hover,
+    &:focus {
+      outline: 0.25rem solid var(--surface-secondary);
     }
   }
-  
 }
 
+@media (width <= 31.25em) {
+  button {
+    text-align: center;
+  }
+
+  button.btn-secondary {
+    margin-left: initial;
+  }
+}

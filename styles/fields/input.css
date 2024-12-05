@@ -109,3 +109,9 @@ input {
     display: none;
   }
 }
+
+@media (width <= 31.25em) {
+  fieldset.adress .flex {
+    flex-direction: column;
+  }
+}

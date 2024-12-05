@@ -17,15 +17,15 @@ main {
     & .back {
       display: flex;
       align-items: center;
-      gap: .5rem;
+      gap: 0.5rem;
 
       margin-bottom: 1.5rem;
     }
 
     & h1 {
       font: 600 1.5rem/1.25 var(--font-family);
-      
-      margin-bottom: .5rem;
+
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -38,7 +38,7 @@ aside {
     max-width: 31rem;
 
     & h2 {
-      margin-block: .5rem;
+      margin-block: 0.5rem;
 
       font: 600 2.5rem/1.25 var(--font-family);
 
@@ -49,6 +49,31 @@ aside {
 
     & > img {
       margin-top: 2rem;
+    }
+  }
+}
+
+@media (width <= 31.25em) {
+  #app {
+    grid-template-columns: 1fr;
+    overflow: unset;
+  }
+
+  main {
+    overflow: unset;
+  }
+
+  aside {
+    order: -1;
+
+    & header h2,
+    & header p {
+      display: none;
+    }
+
+    & header {
+      display: flex;
+      justify-content: center;
     }
   }
 }
