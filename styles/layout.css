@@ -61,9 +61,11 @@ aside {
 
   main {
     overflow: unset;
+    padding: 2rem;
   }
 
   aside {
+    padding: 2rem;
     order: -1;
 
     & header h2,
